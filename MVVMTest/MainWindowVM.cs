@@ -6,35 +6,30 @@ using System.Windows.Input;
 namespace MVVMTest {
     class MainWindowVM :INotifyPropertyChanged{
         private string _text;
-        private string _name;
 
-        public string Name { get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
-        }
-
-        // Event i funkcja 
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
 
         public MainWindowVM() {
+            _text = "Text example";
             ChangeTextButtonCommand = new RelayCommand(ChangeText);
+            ChangeTextButtonCommand = new RelayCommand(HelloUser);
         }
-
+        private void OnPropertyChanged(string propName) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
         public ICommand ChangeTextButtonCommand { get; set; }
 
+        public string Text {
+            get { return _text; }
+            set { _text = value;
+                OnPropertyChanged("Text");
+            }
+        }
         private void ChangeText(object obj) {
-            //Text = "Changed!";
+            Text = "Changed!";
             Console.WriteLine("dupa");
+        }
+        private void HelloUser(object obj) {
         }
     }
 }
