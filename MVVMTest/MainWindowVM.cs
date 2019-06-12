@@ -8,7 +8,9 @@ namespace MVVMTest {
         private string _text;
         private string _name;
 
-        public string Name { get
+        public string Name
+        {
+            get
             {
                 return _name;
             }
@@ -26,13 +28,15 @@ namespace MVVMTest {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
 
-        public MainWindowVM() {
+        public MainWindowVM()
+        {
             ChangeTextButtonCommand = new RelayCommand(ChangeText);
         }
 
         public ICommand ChangeTextButtonCommand { get; set; }
 
-        private void ChangeText(object obj) {
+        private void ChangeText(object obj)
+        {
             //Text = "Changed!";
             Console.WriteLine("dupa");
         }
