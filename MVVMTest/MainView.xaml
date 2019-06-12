@@ -9,7 +9,7 @@
     <Grid>
         <Button Name="ChangeTextButton" Content="Click" Margin="138,111,0,0" Width="50" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ChangeTextButtonCommand}"/>
         <Label  Content="{Binding Text}" Margin="107,50,0,0" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="107,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFE2FDFF" BorderBrush="#FF0D4F59"/>
+        <TextBox Text="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="107,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFE2FDFF" BorderBrush="#FF0D4F59"/>
         <Label Content="Podaj imię:" HorizontalAlignment="Left" Margin="35,64,0,0" VerticalAlignment="Top"/>
         <Label x:Name="WitajImie" Content="" HorizontalAlignment="Left" Margin="107,178,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
