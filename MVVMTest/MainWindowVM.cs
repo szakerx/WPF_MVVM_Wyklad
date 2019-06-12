@@ -26,6 +26,7 @@ namespace MVVMTest {
         }
         private void ChangeText(object obj) {
             Text = "Changed!";
+            Console.WriteLine("dupa");
         }
     }
 }
