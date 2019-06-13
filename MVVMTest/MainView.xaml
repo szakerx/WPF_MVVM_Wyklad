@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="275" Width="331">
     <Grid>
-        <Button Name="ChangeTextButton" Content="Click" Margin="138,111,0,0" Width="50" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ChangeTextButtonCommand}"/>
-        <Label  Content="{Binding Text}" Margin="107,50,0,0" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="107,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFE2FDFF" BorderBrush="#FF0D4F59"/>
-        <Label Content="Podaj imię:" HorizontalAlignment="Left" Margin="35,64,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="WitajImie" Content="" HorizontalAlignment="Left" Margin="107,178,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ChangeTextButton" Content="Dodaj" Margin="230,23,0,0" Width="70" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding AddUserCommand}"/>
+        <TextBox Text="{Binding Name, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="23" Margin="97,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="#FFE2FDFF" BorderBrush="#FF0D4F59"/>
+        <Label Content="Podaj imię:" HorizontalAlignment="Left" Margin="24,23,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="WitajImie" Content="{Binding WelcomeMessage, Mode=OneWay}" HorizontalAlignment="Left" Margin="97,64,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.503,0.367"/>
+        <Button Command="{Binding GetUsersInformationCommand}" Content="Informacje" HorizontalAlignment="Left" Height="29" Margin="122,195,0,0" VerticalAlignment="Top" Width="70"/>
+        <ListBox ItemsSource="{Binding UsersList}" HorizontalAlignment="Left" Height="100" Margin="56,90,0,0" VerticalAlignment="Top" Width="207"/>
     </Grid>
 </Window>
